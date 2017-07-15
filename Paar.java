@@ -1,7 +1,7 @@
 public class Paar<E,Z>  {
 
-  E erstes;
-  Z zweites;
+  private E erstes;
+  private Z zweites;
   //komstrukror
   public Paar(E erstes, Z zweites) {
     this.erstes = erstes;
