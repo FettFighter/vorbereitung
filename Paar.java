@@ -1,40 +1,42 @@
-public class Paar {
+public class Paar<E,Z>  {
 
-  int erstes;
-  int zweites;
+  E erstes;
+  Z zweites;
   //komstrukror
-  public Paar(int erstes, int zweites) {
-    compareWrite(erstes, zweites);
+  public Paar(E erstes, Z zweites) {
+    this.erstes = erstes;
+    this.zweites = zweites;
+//    compareWrite(erstes, zweites);
   }
   //setter
-  public void erstes(int erstes) {
+  public void erstes(E erstes) {
     this.erstes = erstes;
   }
   //getter
-  public int erstes() {
+  public E erstes() {
     return erstes;
   }
   //setter
-  public void zweites(int zweites) {
+  public void zweites(Z zweites) {
     this.zweites = zweites;
   }
   //getter
-  public int zweites() {
+  public Z zweites() {
     return zweites;
   }
   //getter
   public String toString() {
     return "("+ erstes + "," +  zweites + ")";
   }
-  //setter
-  public String replaceGivenValuesInOrder(int erstes, int zweites) {
+/*  //setter
+  public String replaceGivenValuesInOrder(E erstes, Z zweites) {
     String temp = toString();
     compareWrite(erstes, zweites);
     return temp;
   }
   //setter
-  private void compareWrite(int erstes, int zweites) { 
-    if(erstes < zweites) {
+  private void compareWrite(E erstes, Z zweites) { 
+    if(erstes.doubleValue() < zweites.doubleValue()) {
       this.erstes = erstes;
       this.zweites = zweites;
     } else {
@@ -42,4 +44,5 @@ public class Paar {
       this.zweites = erstes; 
     }
   }
+*/
 }
