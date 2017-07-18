@@ -1,8 +1,8 @@
 public class Knoten<W> {
 
   private W anyValue;
-  private Knoten knotenLinks;
-  private Knoten knotenRechts;
+  private Knoten<W> knotenLinks;
+  private Knoten<W> knotenRechts;
   //Konstrutkor
   public Knoten(W anyValue) {
     this.anyValue = anyValue;
@@ -23,19 +23,19 @@ public class Knoten<W> {
     return "(" + anyValue + ")";
   }
   //getter
-  public Knoten knotenLinks() {
+  public Knoten<W> knotenLinks() {
     return knotenLinks;
   }
   //setter
-  public void knotenLinks(Knoten knotenLinks) {
+  public void knotenLinks(Knoten<W> knotenLinks) {
     this.knotenLinks = knotenLinks;
   }
   //getter
-  public Knoten knotenRechts() {
+  public Knoten<W> knotenRechts() {
     return knotenRechts;
   }
   //setter
-  public void knotenRechts(Knoten knotenRechts) {
+  public void knotenRechts(Knoten<W> knotenRechts) {
     this.knotenRechts = knotenRechts;
   }
 }

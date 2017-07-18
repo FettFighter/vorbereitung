@@ -21,7 +21,7 @@ public class Starter {
    // Knoten1) knotenRechts soll auf knoten2 zeigen | knoten2) knotenRechts  auf knoten3 | Auf Referenzen zeigen.
     knoten.knotenRechts(knoten2); 
     knoten2.knotenRechts(knoten3);
-    knoten.knotenRechts().knotenRechts().knotenRechts(knoten4);
+    //knoten.knotenRechts().knotenRechts().knotenRechts(knoten4);
 
     //EVL
     EVL<Integer> evl = new EVL<Integer>(256);
@@ -36,6 +36,8 @@ public class Starter {
     System.out.println(evl2.toString());
     System.out.println(evl2.laengeListe());
     System.out.println(evl2.letzterWert());
+    evl2.append(new Knoten<Paar<Integer,Integer>>(new Paar<Integer,Integer>(knoten5.anyValue().erstes(), knoten5.anyValue().zweites())));
+    System.out.println(evl2);
     System.out.println();
  
     System.out.println("KNOTEN KNOTEN KNOTEN KNOTEN");

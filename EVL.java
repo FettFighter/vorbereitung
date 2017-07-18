@@ -32,6 +32,7 @@ public class EVL<E> {
     tempKnoten = start.knotenRechts();
 
     while(tempKnoten != null) {
+      System.out.println(temp);
       temp += tempKnoten;
       tempKnoten = tempKnoten.knotenRechts();
     }
@@ -50,7 +51,7 @@ public class EVL<E> {
     return index;
   }
   
-  public E letzerWert() {
+  public E letzterWert() {
     Knoten<E> tempKnoten;
     
     tempKnoten = start.knotenRechts();
@@ -58,7 +59,33 @@ public class EVL<E> {
       tempKnoten = tempKnoten.knotenRechts();
     }
     return tempKnoten.anyValue();
-  } 
+  }
+  
+  public void append(Knoten<E> knoten) { 
+    Knoten<E> tempKnoten;
+    
+    tempKnoten = start.knotenRechts();
+    while(tempKnoten != null && tempKnoten.knotenRechts() != null) {
+      tempKnoten = tempKnoten.knotenRechts();
+    }
+    //tempKnoten ist mein LETZTER Knoten, dann greife ich auf knoten zu und hänge dass an den knotenRechts
+    tempKnoten.knotenRechts(knoten);
+  }
+
+  public void appendValue(E value) {
+    append(new Knoten<E>(value));
+  }
+  //An einem Index ein wert einfügen. Über die Liste iterrieren, wenn der Index gefunden wurde, dannnnnn wird der Wert eingefügt, wenn nicht, dann pech.
+  public int insert(int index, Knoten insertKnoten) {
+    Knoten<E> tempKnoten;
+    
+    tempKnoten = start.knotenRechts();
+    while(tempKnoten != null && tempKnoten.knotenRechts() != null) {
+      tempKnoten = tempKnoten.knotenRechts();
+    }
+    //hier kommt noch was hin
+    return 0;
+  }
 }
 
 // [KLASSE].[ZEIGT WAS STATISCH UND DEN RICHTIGEN ACCESSMODIFIER HAT AN]
