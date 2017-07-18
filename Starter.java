@@ -35,12 +35,14 @@ public class Starter {
     System.out.println(evl.laengeListe());
     System.out.println(evl2.toString());
     System.out.println(evl2.laengeListe());
-    
+    System.out.println(evl2.letzterWert());
+    System.out.println();
  
     System.out.println("KNOTEN KNOTEN KNOTEN KNOTEN");
     System.out.println(knoten.knotenRechts());
     System.out.println(knoten2.knotenRechts());
     System.out.println(knoten.knotenRechts().knotenRechts().knotenRechts());
+    System.out.println();
 
     System.out.println("PAAR PAAR PAAR PAAR");
     System.out.println(paar.toString());

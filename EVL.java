@@ -50,13 +50,16 @@ public class EVL<E> {
     return index;
   }
   
-  public Knoten letzerWert(Knoten<E> letzterWert) {
+  public E letzerWert() {
+    Knoten<E> tempKnoten;
     
-    return null;
-  }
- 
+    tempKnoten = start.knotenRechts();
+    while(tempKnoten != null && tempKnoten.knotenRechts() != null) {
+      tempKnoten = tempKnoten.knotenRechts();
+    }
+    return tempKnoten.anyValue();
+  } 
 }
-
 
 // [KLASSE].[ZEIGT WAS STATISCH UND DEN RICHTIGEN ACCESSMODIFIER HAT AN]
 // [INSTANZVARIABLE.[ZEIGT ALLES AN WAS IN DER KLASSE IST MIT DEM ACCESSMODIRIER]
