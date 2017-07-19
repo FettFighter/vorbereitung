@@ -26,13 +26,12 @@ public class EVL<E> {
 
   public String toString() {
     String temp = "";
-    Knoten tempKnoten;
+    Knoten<E> tempKnoten;
 
     temp += start;
     tempKnoten = start.knotenRechts();
 
     while(tempKnoten != null) {
-      System.out.println(temp);
       temp += tempKnoten;
       tempKnoten = tempKnoten.knotenRechts();
     }
@@ -42,7 +41,7 @@ public class EVL<E> {
 
   public int laengeListe() {
     int index;
-    Knoten tempKnoten;
+    Knoten<E> tempKnoten;
     
     tempKnoten = start.knotenRechts();
     for(index = 1; tempKnoten != null; index++) {
@@ -60,7 +59,7 @@ public class EVL<E> {
     }
     return tempKnoten.anyValue();
   }
-  
+  //an letztes dranhängen
   public void append(Knoten<E> knoten) { 
     Knoten<E> tempKnoten;
     
@@ -76,18 +75,51 @@ public class EVL<E> {
     append(new Knoten<E>(value));
   }
   //An einem Index ein wert einfügen. Über die Liste iterrieren, wenn der Index gefunden wurde, dannnnnn wird der Wert eingefügt, wenn nicht, dann pech.
-  public int insert(int index, Knoten insertKnoten) {
+  public void insert(int index, Knoten<E> insertKnoten) {
     Knoten<E> tempKnoten;
-    
+    int index1;
+
     tempKnoten = start.knotenRechts();
-    while(tempKnoten != null && tempKnoten.knotenRechts() != null) {
+
+    for(index1 = 1; !(index1 == index); index1++) {
       tempKnoten = tempKnoten.knotenRechts();
     }
-    //hier kommt noch was hin
-    return 0;
+    insertKnoten.knotenRechts(tempKnoten.knotenRechts());
+    tempKnoten.knotenRechts(insertKnoten);
+  }
+
+  public void deleteFirst() {  
+    start = start.knotenRechts();
+  }
+
+  public void deleteLast() { 
+    Knoten<E> tempKnoten;
+    Knoten<E> alterTempKnoten;
+
+    tempKnoten = start.knotenRechts();
+    alterTempKnoten = tempKnoten;
+    while(tempKnoten != null && tempKnoten.knotenRechts() != null) {
+      alterTempKnoten = tempKnoten;
+      tempKnoten = tempKnoten.knotenRechts();
+    }
+    //tempKnoten.knotenRechts(tempKnoten.knotenRechts().knotenRechts());
+    alterTempKnoten.knotenRechts(null);
+  }
+
+  public void deleteX(int index) { 
+    Knoten<E> tempKnoten;
+    Knoten<E> alterTempKnoten;
+    int index1;
+    
+    tempKnoten = start.knotenRechts();
+    alterTempKnoten = start.knotenRechts();
+    for(index1 = 1; !(index1 == index); index1++) {
+      alterTempKnoten = tempKnoten;
+      tempKnoten = tempKnoten.knotenRechts();
+    }
+    alterTempKnoten.knotenRechts(alterTempKnoten.knotenRechts().knotenRechts());
   }
 }
-
 // [KLASSE].[ZEIGT WAS STATISCH UND DEN RICHTIGEN ACCESSMODIFIER HAT AN]
 // [INSTANZVARIABLE.[ZEIGT ALLES AN WAS IN DER KLASSE IST MIT DEM ACCESSMODIRIER]
 // KONiSTRUKTOREN WERDEN NUR MIT NEW ANGEZEIGT

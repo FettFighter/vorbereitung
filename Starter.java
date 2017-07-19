@@ -25,31 +25,39 @@ public class Starter {
 
     //EVL
     EVL<Integer> evl = new EVL<Integer>(256);
-    EVL<Paar<Integer, Integer>> evl2 = new EVL<Paar<Integer, Integer>>(new Paar<Integer, Integer>(88,99));
+    EVL<Paar<Integer, Integer>> evl2 = new EVL<Paar<Integer, Integer>>(new Paar<Integer, Integer>(1,9));
     evl.prepend(knoten2);
     evl2.prepend(knoten5);
     evl2.prependValue(new Paar<Integer, Integer>(19,20));
     System.out.println("EVL EVL EVL EVL");
-    System.out.println(evl.firstValue());
-    System.out.println(evl.toString());
-    System.out.println(evl.laengeListe());
+    //System.out.println(evl.firstValue());
+    //System.out.println(evl.toString());
+    //System.out.println(evl.laengeListe());
     System.out.println(evl2.toString());
-    System.out.println(evl2.laengeListe());
-    System.out.println(evl2.letzterWert());
+    //System.out.println(evl2.laengeListe());
+    //System.out.println(evl2.letzterWert());
     evl2.append(new Knoten<Paar<Integer,Integer>>(new Paar<Integer,Integer>(knoten5.anyValue().erstes(), knoten5.anyValue().zweites())));
     System.out.println(evl2);
-    System.out.println();
- 
+    evl2.insert(2, new Knoten<Paar<Integer, Integer>>(new Paar<Integer, Integer>(knoten5.anyValue().erstes(), knoten5.anyValue().zweites())));
+    System.out.println(evl2);
+    evl2.deleteLast(); //Zeile löschen
+    System.out.println(evl2);
+    evl2.deleteFirst();
+    System.out.println(evl2);
+    evl2.deleteX(1); 
+    System.out.println(evl2);
+    /*
     System.out.println("KNOTEN KNOTEN KNOTEN KNOTEN");
     System.out.println(knoten.knotenRechts());
     System.out.println(knoten2.knotenRechts());
     System.out.println(knoten.knotenRechts().knotenRechts().knotenRechts());
     System.out.println();
-
+    
     System.out.println("PAAR PAAR PAAR PAAR");
     System.out.println(paar.toString());
     System.out.println(paar4.toString());
     System.out.println(paar4.erstes().getClass().toString()+ paar4.zweites().getClass().toString());
     System.out.println(gleichesPaar);
+    */
   }
 }
