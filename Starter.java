@@ -55,7 +55,6 @@ public class Starter {
     System.out.println(stack.peek());
     stack.pop();
     System.out.println(stack.toString());
-    *********************************************************/
     
     System.out.println("QUEUE QUEUE QUEUE QUEUE QUEUE");
     Queue<String> queue = new Queue<String>();
@@ -66,6 +65,18 @@ public class Starter {
     queue.queue("Alter ich bin ein rieseger enes"); 
     queue.dequeue();
     System.out.println(queue.toString()); 
+    *********************************************************/
+
+    System.out.println("RINGPUFFER RINGPUFFER RINGPUFFER");
+    RingPuffer<Integer> ringP = new RingPuffer<Integer>(10);
+    ringP.pufferInsert(5);
+    ringP.pufferInsert(10);
+    ringP.pufferInsert(15);
+    ringP.pufferInsert(20);
+    ringP.pufferInsert(25);
+    System.out.println(ringP.toString());
+    ringP.pufferDelete();
+    System.out.println(ringP.toString());
 
 
     /************************************
