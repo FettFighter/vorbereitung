@@ -1,4 +1,3 @@
-public class EVL<E> {
 
   private Knoten<E> start;
 
