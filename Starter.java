@@ -68,7 +68,8 @@ public class Starter {
     *********************************************************/
 
     System.out.println("RINGPUFFER RINGPUFFER RINGPUFFER");
-    RingPuffer<Integer> ringP = new RingPuffer<Integer>(10);
+    RingPuffer<Integer> ringP = new RingPuffer<Integer>(4);
+    try {
     ringP.pufferInsert(5);
     ringP.pufferInsert(10);
     ringP.pufferInsert(15);
@@ -77,7 +78,10 @@ public class Starter {
     System.out.println(ringP.toString());
     ringP.pufferDelete();
     System.out.println(ringP.toString());
-
+    } catch(GehtNetException e) {
+      e.printStackTrace();
+    }
+    
 
     /************************************
     System.out.println("KNOTEN KNOTEN KNOTEN KNOTEN");
