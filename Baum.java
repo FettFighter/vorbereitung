@@ -8,6 +8,7 @@ public class Baum<T extends Comparable<T>> {
       Item<T> stepItem = root;
       Item<T> oldStepItem = root;
       int comp;
+      
       while(stepItem != null) {
         oldStepItem = stepItem;
         comp = stepItem.value().compareTo(value);
@@ -20,6 +21,7 @@ public class Baum<T extends Comparable<T>> {
           return;
         }
       }
+      
       comp = oldStepItem.value().compareTo(value);
       if(comp < 0) {
         oldStepItem.left(new Item<T>(value));
@@ -28,7 +30,7 @@ public class Baum<T extends Comparable<T>> {
       }
     }
   }
-  //inorder
+
   private String toString(Item<T> item) {
     return item == null 
       ? "" 

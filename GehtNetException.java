@@ -1,5 +1,5 @@
 public class GehtNetException extends Exception {
-//Geht net.
+
   public GehtNetException() {
     super();
   }
@@ -7,5 +7,4 @@ public class GehtNetException extends Exception {
   public GehtNetException(String string) {
     super(string);
   }
-
 }

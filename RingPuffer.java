@@ -7,9 +7,7 @@ public class RingPuffer<R extends Object> {
   public RingPuffer(int valueInt) {
     ringPuffer = new Object[valueInt];
   }
-
-  //Intern verwalten. Merken was ist mein start und was ist die länge von meinem Datentypen. Werte löschen und hinzufügen und hehexd die liste anzeigen.
-  //Start als index (ersteposition)
+  
   public void pufferInsert(Object pufferIn) throws GehtNetException {
 
     if(laenge != ringPuffer.length-1) {  
@@ -32,8 +30,9 @@ public class RingPuffer<R extends Object> {
     if(laenge != 0) {
       laenge --;
     } else {
-      throw new GehtNetException("pufferDelete() geht net, weil Puffer = leer.p.s. guck im Code nach du kek.");
+      throw new GehtNetException("pufferDelete(): es wurde versucht mehr Elemente zu löschen als überhaupt exestieren.");
    }
+   
     return tempPuffer;
   } 
 
@@ -42,14 +41,7 @@ public class RingPuffer<R extends Object> {
     for(Object item: ringPuffer) {
      lol = lol + (" " + item + " ");
     }
+    
     return lol;
   }
-
-  
 }
-
-//Exception handling.
-//Eigene Exception, wenn ich mehr Elemente annehme als meine Datenstruktur lang ist.
-//Exception, wenn ich ein Element löschen will und der puffer leer ist.
-//Overflow logik, wenn indizes weiter sind als mein Array Lang ist.
-//toString verändern, sodass nur die die tatsächlich erreichbar sind angezeigt werden.

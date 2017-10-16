@@ -82,7 +82,6 @@ public class Starter {
       e.printStackTrace();
     }
     
-
     /************************************
     System.out.println("KNOTEN KNOTEN KNOTEN KNOTEN");
     System.out.println(knoten.knotenRechts());
